@@ -22,6 +22,6 @@ chrome.runtime.onInstalled.addListener(function() {
 
 chrome.pageAction.onClicked.addListener(function(tab) {
     var match = pattern.exec(tab.url);
-    var newUrl = match[1] + "doc-snapshots.qt.io/qt5-dev/" + match[6];
+    var newUrl = match[1] + "doc-snapshots.qt.io/qt5-dev/" + match[6].toLowerCase();
     chrome.tabs.update(tab.id, {url: newUrl});
 });
